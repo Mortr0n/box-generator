@@ -5,13 +5,13 @@ import Display from './components/Display';
 
 function App() {
   const [boxColor, setBoxColor] = useState([]);
-  const [color, setColor] = useState("");
+  
 
   return (
     
 
     <div className="App">
-      <Form boxColor={boxColor} setBoxColor={setBoxColor} color={color} setColor={setColor}/>
+      <Form boxColor={boxColor} setBoxColor={setBoxColor} />
       <Display boxColor={boxColor} />
       
     </div>

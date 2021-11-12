@@ -2,12 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 
 const Form = (props) => {
-    const {boxColor, setBoxColor, color, setColor} = props;
+    const {boxColor, setBoxColor} = props;
     const [height, setHeight] = useState("");
     const [width, setWidth] = useState("");
+    const [color, setColor] = useState("");
     
-
-
     const submitHandler= (e) => {
         e.preventDefault(e);
 
