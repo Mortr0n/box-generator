@@ -1,15 +1,19 @@
 import './App.css';
 import React, { useState } from 'react';
-import Form from './components/form';
+import Form from './components/Form';
+import Display from './components/Display';
 
 function App() {
-  const [box, setBox] = useState([]);
+  const [boxColor, setBoxColor] = useState([]);
+  const [color, setColor] = useState("");
 
   return (
     
 
     <div className="App">
-      <Form box={box} setBox={setBox} />
+      <Form boxColor={boxColor} setBoxColor={setBoxColor} color={color} setColor={setColor}/>
+      <Display boxColor={boxColor} />
+      
     </div>
   );
 }

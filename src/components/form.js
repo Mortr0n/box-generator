@@ -1,26 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 
 const Form = (props) => {
-    const {box, setBox} = props;
-    const [color, setColor] = useState("");
+    const {boxColor, setBoxColor, color, setColor} = props;
+    const [height, setHeight] = useState("");
+    const [width, setWidth] = useState("");
+    
 
 
-    const submiHandler= (e) => {
+    const submitHandler= (e) => {
         e.preventDefault(e);
 
-        setBox([...box, {
+        const newBoxColor = ([...boxColor, {
             color,
+            height,
+            width,
         }])
+        setBoxColor(newBoxColor);
         setColor("");
+        setHeight("");
+        setWidth("");
     };
 
     return(
         <div>
             <h1>Add A Box!</h1>
-            <form onSubmit={submiHandler} className="boxForm">
+            <form onSubmit={submitHandler} className="boxForm">
                 <label htmlFor="color">Color : </label>
                 {/* Need to see how to do the color here */}
                 <input name="color" type="text" value={color} onChange={(e) => setColor(e.target.value)} />
+                <label htmlFor="height">Height : </label>
+                <input name="height" type="text" value={height} onChange={(e) => setHeight(e.target.value)} />
+                <label htmlFor="width">Width : </label>
+                <input name="width" type="text" value={width} onChange={(e) => setWidth(e.target.value)} />
                 <button type="submit">Add</button>
             </form>
         </div>
